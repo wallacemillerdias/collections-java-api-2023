@@ -1,7 +1,5 @@
 package list.Pesquisa;
 
-import java.util.ArrayList;
-
 public class Livro {
     private String titulo;
     private String autor;
