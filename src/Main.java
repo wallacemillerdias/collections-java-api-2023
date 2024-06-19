@@ -1,5 +1,6 @@
 import list.OperacoesBasicas.CarrinhoDeCompras;
 import list.OperacoesBasicas.ListaTarefa;
+import list.Pesquisa.CatalogoLivros;
 
 
 public class Main {
@@ -23,7 +24,6 @@ public class Main {
         listaTarefa.obterDescricoesTarefas();
 
 
-
         //Carrinho de compras
         CarrinhoDeCompras carrinhoDeCompras = new CarrinhoDeCompras();
 
@@ -38,7 +38,21 @@ public class Main {
 
         carrinhoDeCompras.exibirItens();
 
-        System.out.println("O valor total da compra é = " + carrinhoDeCompras.calcularValorTotal());
+        System.out.println("O valor total da compra é = " + carrinhoDeCompras.calcularValorTotal() + "\n");
+
+        // Catálogo de Livros
+        CatalogoLivros CatalogoLivros = new CatalogoLivros();
+
+        CatalogoLivros.adicionarLivro("Livro 1", "Autor 1", 2020);
+        CatalogoLivros.adicionarLivro("Livro 1", "Autor 2", 2021);
+        CatalogoLivros.adicionarLivro("Livro 2", "Autor 2", 2022);
+        CatalogoLivros.adicionarLivro("Livro 4", "Autor 4", 2023);
+        CatalogoLivros.adicionarLivro("Livro 5", "Autor 5", 1994);
+
+        System.out.println(CatalogoLivros.pesquisarPorAutor("Autor 2"));
+        System.out.println(CatalogoLivros.pesquisarPorIntervaloAnos(2020, 2022));
+        System.out.println(CatalogoLivros.pesquisarPorTitulo("Título Inexistente"));
+
 
     }
 }
