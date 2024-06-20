@@ -31,7 +31,6 @@ public class Main {
         carrinhoDeCompras.adicionarItem("bike", 1400, 2);
         carrinhoDeCompras.adicionarItem("tv", 1300, 2);
         carrinhoDeCompras.adicionarItem("pc", 1200, 2);
-
         carrinhoDeCompras.exibirItens();
 
         carrinhoDeCompras.removerItem("pc");
