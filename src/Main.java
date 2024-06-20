@@ -1,6 +1,7 @@
 import list.OperacoesBasicas.CarrinhoDeCompras;
 import list.OperacoesBasicas.ListaTarefa;
 import list.Pesquisa.CatalogoLivros;
+import list.Pesquisa.SomaNumeros;
 
 
 public class Main {
@@ -22,7 +23,6 @@ public class Main {
         System.out.println("Agora suas tarefas são: " + listaTarefa.obterNumeroTotalTarefas() + " tarefas na lista");
 
         listaTarefa.obterDescricoesTarefas();
-
 
         //Carrinho de compras
         CarrinhoDeCompras carrinhoDeCompras = new CarrinhoDeCompras();
@@ -53,7 +53,23 @@ public class Main {
         System.out.println(CatalogoLivros.pesquisarPorIntervaloAnos(2020, 2022));
         System.out.println(CatalogoLivros.pesquisarPorTitulo("Título Inexistente"));
 
+        // Soma Números
+        SomaNumeros somaNumeros = new SomaNumeros();
 
+        somaNumeros.adicionarNumero(5);
+        somaNumeros.adicionarNumero(0);
+        somaNumeros.adicionarNumero(0);
+        somaNumeros.adicionarNumero(-2);
+        somaNumeros.adicionarNumero(10);
+
+        System.out.println("Números adicionados:");
+        somaNumeros.exibirNumeros();
+
+        System.out.println("Soma dos números = " + somaNumeros.calcularSoma());
+
+        System.out.println("Maior número = " + somaNumeros.encontrarMaiorNumero());
+
+        System.out.println("Menor número = " + somaNumeros.encontrarMenorNumero());
     }
 }
 
