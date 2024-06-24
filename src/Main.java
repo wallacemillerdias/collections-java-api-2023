@@ -1,5 +1,6 @@
 import list.OperacoesBasicas.CarrinhoDeCompras;
 import list.OperacoesBasicas.ListaTarefa;
+import list.Ordenacao.OrdenacaoNumeros;
 import list.Ordenacao.OrdenacaoPessoas;
 import list.Pesquisa.CatalogoLivros;
 import list.Pesquisa.SomaNumeros;
@@ -81,6 +82,23 @@ public class Main {
 
         System.out.println(ordenacaoPessoas.ordenarPorIdade());
         System.out.println(ordenacaoPessoas.ordenarPorAltura());
+
+        //Ordenação Números
+        OrdenacaoNumeros numeros = new OrdenacaoNumeros();
+
+        numeros.adicionarNumero(10);
+        numeros.adicionarNumero(15);
+        numeros.adicionarNumero(12);
+        numeros.adicionarNumero(9);
+        numeros.adicionarNumero(50);
+
+        numeros.exibirNumeros();
+
+        System.out.println("Ordem Ascendente " + numeros.ordenarAscendente());
+
+        System.out.println("Ordem Descendente " + numeros.ordenarDescendente());
+
+        numeros.exibirNumeros();
     }
 }
 
