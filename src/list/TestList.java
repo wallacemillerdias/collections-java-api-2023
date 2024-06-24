@@ -1,3 +1,5 @@
+package list;
+
 import list.OperacoesBasicas.CarrinhoDeCompras;
 import list.OperacoesBasicas.ListaTarefa;
 import list.Ordenacao.OrdenacaoNumeros;
@@ -6,7 +8,7 @@ import list.Pesquisa.CatalogoLivros;
 import list.Pesquisa.SomaNumeros;
 
 
-public class Main {
+public class TestList {
     public static void main(String[] args) {
 
         ListaTarefa listaTarefa = new ListaTarefa();
