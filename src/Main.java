@@ -1,5 +1,6 @@
 import list.OperacoesBasicas.CarrinhoDeCompras;
 import list.OperacoesBasicas.ListaTarefa;
+import list.Ordenacao.OrdenacaoPessoas;
 import list.Pesquisa.CatalogoLivros;
 import list.Pesquisa.SomaNumeros;
 
@@ -69,6 +70,17 @@ public class Main {
         System.out.println("Maior número = " + somaNumeros.encontrarMaiorNumero());
 
         System.out.println("Menor número = " + somaNumeros.encontrarMenorNumero());
+
+        // Ordenação Pessoas
+        OrdenacaoPessoas ordenacaoPessoas = new OrdenacaoPessoas();
+
+        ordenacaoPessoas.adicionarPessoa("Wallace", 37, 1.70);
+        ordenacaoPessoas.adicionarPessoa("Jean", 36, 1.68);
+        ordenacaoPessoas.adicionarPessoa("Denise", 30, 1.65);
+        ordenacaoPessoas.adicionarPessoa("João", 10, 1.30);
+
+        System.out.println(ordenacaoPessoas.ordenarPorIdade());
+        System.out.println(ordenacaoPessoas.ordenarPorAltura());
     }
 }
 
