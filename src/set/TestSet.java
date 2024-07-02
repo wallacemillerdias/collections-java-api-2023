@@ -4,6 +4,7 @@ import set.OperacoesBasicas.ConjuntoConvidados;
 import set.OperacoesBasicas.ConjuntoPalavrasUnicas;
 import set.Pesquisa.AgendaContatos;
 import set.Pesquisa.Contato;
+import set.Pesquisa.ListaTarefas;
 
 public class TestSet {
     public static void main(String[] args) {
@@ -55,13 +56,42 @@ public class TestSet {
 
         agendaContatos.exibirContatos();
 
-        System.out.println(agendaContatos.pesquisarPorNome("Denise"));
+        System.out.println(agendaContatos.pesquisarPorNome("Wallace"));
 
         Contato contatoAtualizado = agendaContatos.atualizarNumeroContato("jean", 999999999);
         System.out.println("Contato atualizado: " + contatoAtualizado);
 
         System.out.println("Contatos na agenda após atualização:");
         agendaContatos.exibirContatos();
+
+        // Lista Tarefas
+        ListaTarefas listaTarefas = new ListaTarefas();
+
+        listaTarefas.adicionarTarefa("Estudar Java");
+        listaTarefas.adicionarTarefa("Fazer exercícios físicos");
+        listaTarefas.adicionarTarefa("Organizar a mesa de trabalho");
+        listaTarefas.adicionarTarefa("Ler livro");
+        listaTarefas.adicionarTarefa("Preparar apresentação");
+
+        listaTarefas.exibirTarefas();
+
+        System.out.println("Total de tarefas na lista: " + listaTarefas.contarTarefas());
+
+        listaTarefas.marcarTarefaConcluida("Estudar Java");
+
+        listaTarefas.removerTarefa("Fazer exercícios físicos");
+        listaTarefas.exibirTarefas();
+
+        listaTarefas.exibirTarefas();
+
+        listaTarefas.marcarTarefaPendente("Fazer exercícios físicos");
+
+        listaTarefas.exibirTarefas();
+
+        System.out.println("Tarefa concluída " + listaTarefas.obterTarefasConcluidas());
+        listaTarefas.limparListaTarefas();
+
+        listaTarefas.exibirTarefas();
 
     }
 }
