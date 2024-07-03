@@ -2,6 +2,7 @@ package set;
 
 import set.OperacoesBasicas.ConjuntoConvidados;
 import set.OperacoesBasicas.ConjuntoPalavrasUnicas;
+import set.Ordenacao.CadastroProdutos;
 import set.Pesquisa.AgendaContatos;
 import set.Pesquisa.Contato;
 import set.Pesquisa.ListaTarefas;
@@ -92,6 +93,19 @@ public class TestSet {
         listaTarefas.limparListaTarefas();
 
         listaTarefas.exibirTarefas();
+
+        // Cadastro produtos
+        CadastroProdutos cadastroProdutos = new CadastroProdutos();
+
+        cadastroProdutos.adicionarProduto(100, "Televisão", 3000, 1);
+        cadastroProdutos.adicionarProduto(101, "Computador", 3500, 2);
+        cadastroProdutos.adicionarProduto(102, "Geladeira", 4500, 2);
+        cadastroProdutos.adicionarProduto(103, "Fogão", 2499, 2);
+        cadastroProdutos.adicionarProduto(104, "Notebook", 5000, 2);
+
+        System.out.println("Produtos por nome " + cadastroProdutos.exibirProdutosPorNome());
+
+        System.out.println("Produtos por preço " + cadastroProdutos.exibirProdutosPorPreco());
 
     }
 }
