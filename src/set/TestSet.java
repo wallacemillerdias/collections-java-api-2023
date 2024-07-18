@@ -2,7 +2,9 @@ package set;
 
 import set.OperacoesBasicas.ConjuntoConvidados;
 import set.OperacoesBasicas.ConjuntoPalavrasUnicas;
+import set.Ordenacao.Aluno;
 import set.Ordenacao.CadastroProdutos;
+import set.Ordenacao.GerenciadorAlunos;
 import set.Pesquisa.AgendaContatos;
 import set.Pesquisa.Contato;
 import set.Pesquisa.ListaTarefas;
@@ -106,6 +108,29 @@ public class TestSet {
         System.out.println("Produtos por nome " + cadastroProdutos.exibirProdutosPorNome());
 
         System.out.println("Produtos por preço " + cadastroProdutos.exibirProdutosPorPreco());
+
+        //Gerenciador de Alunos
+        GerenciadorAlunos gerenciadorAlunos = new GerenciadorAlunos();
+
+        gerenciadorAlunos.adicionarAluno("Wallace", 102030L, 7.8);
+        gerenciadorAlunos.adicionarAluno("Miller", 101020L, 9.0);
+        gerenciadorAlunos.adicionarAluno("Denise", 202030L, 5.6);
+        gerenciadorAlunos.adicionarAluno("André", 302030L, 6.8);
+        gerenciadorAlunos.adicionarAluno("Ribeiro", 402030L, 10.8);
+
+        System.out.println("Alunos :");
+        gerenciadorAlunos.exibirAlunos();
+
+        gerenciadorAlunos.removerAlunoPorMatricula(402030);
+        gerenciadorAlunos.removerAlunoPorMatricula(302030);
+        System.out.println("Depois de removido :");
+        gerenciadorAlunos.exibirAlunosPorNota();
+
+        System.out.println("Alunos por nome :");
+        gerenciadorAlunos.exibirAlunosPorNome();
+
+        System.out.println("Alunos por nota :");
+        gerenciadorAlunos.exibirAlunosPorNota();
 
     }
 }
