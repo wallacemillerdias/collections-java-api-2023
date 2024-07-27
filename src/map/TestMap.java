@@ -2,8 +2,14 @@ package map;
 
 import map.OperacoesBasicas.AgendaContatos;
 import map.OperacoesBasicas.Dicionario;
+import map.Ordenacao.AgendaEventos;
+import map.Ordenacao.LivrariaOnline;
+import map.Ordenacao.Livro;
 import map.Pesquisa.ContagemPalavras;
 import map.Pesquisa.EstoqueProdutos;
+
+import java.time.LocalDate;
+import java.time.Month;
 
 public class TestMap {
     public static void main(String[] args) {
@@ -67,5 +73,39 @@ public class TestMap {
 
         contagemPalavras.removerPalavra("JavaScript");
         System.out.println("Existem " + contagemPalavras.exibirContagemPalavras() + " palavras.");
+
+        // Agenda de Eventos
+        AgendaEventos agendaEventos = new AgendaEventos();
+
+        agendaEventos.adicionarEvento(LocalDate.of(2020, 7, 11), "Evento1", "Atração1");
+        agendaEventos.adicionarEvento(LocalDate.of(2024, Month.AUGUST, 10), "Evento2", "Atração2");
+        agendaEventos.adicionarEvento(LocalDate.of(2022, Month.MARCH, 13), "Evento3", "Atração4");
+        agendaEventos.adicionarEvento(LocalDate.of(2023, Month.APRIL, 14), "Evento4", "Atração4");
+
+        agendaEventos.exibirAgenda();
+        agendaEventos.obterProximoEvento();
+
+        // Livraria Online
+        LivrariaOnline livrariaOnline = new LivrariaOnline();
+
+        livrariaOnline.adicionarLivro("https://amzn.to/3EclT8Z", new Livro("1984", "George Orwell", 50d));
+        livrariaOnline.adicionarLivro("https://amzn.to/47Umiun", new Livro("A Revolução dos Bichos", "George Orwell", 7.05d));
+        livrariaOnline.adicionarLivro("https://amzn.to/3L1FFI6", new Livro("Caixa de Pássaros - Bird Box: Não Abra os Olhos", "Josh Malerman", 19.99d));
+        livrariaOnline.adicionarLivro("https://amzn.to/3OYb9jk", new Livro("Malorie", "Josh Malerman", 5d));
+        livrariaOnline.adicionarLivro("https://amzn.to/45HQE1L", new Livro("E Não Sobrou Nenhum", "Agatha Christie", 50d));
+        livrariaOnline.adicionarLivro("https://amzn.to/45u86q4", new Livro("Assassinato no Expresso do Oriente", "Agatha Christie", 5d));
+
+        System.out.println("Livros ordenados por preço: \n" + livrariaOnline.exibirLivrosOrdenadosPorPreco());
+
+        System.out.println("Livros ordenados por autor: \n" + livrariaOnline.exibirLivrosOrdenadosPorAutor());
+
+        String autorPesquisa = "Josh Malerman";
+        livrariaOnline.pesquisarLivrosPorAutor(autorPesquisa);
+
+        System.out.println("Livro mais caro: " + livrariaOnline.obterLivroMaisCaro());
+
+        System.out.println("Livro mais barato: " + livrariaOnline.obterLivroMaisBarato());
+
+        livrariaOnline.removerLivro("1984");
     }
 }
